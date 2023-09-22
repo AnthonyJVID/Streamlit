@@ -1,4 +1,6 @@
 # Importation des bibliothèques nécessaires
+pip install joblib
+
 import streamlit as st
 import pandas as pd
 import joblib
