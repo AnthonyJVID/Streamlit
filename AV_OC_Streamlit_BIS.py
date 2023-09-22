@@ -1,8 +1,8 @@
 # Importation des bibliothèques nécessaires
 import streamlit as st
 import pandas as pd
-import joblib
 from sklearn.preprocessing import StandardScaler
+import pickle
 
 # Définir la fonction pour la détection des billets
 def detecteur_billets(df, modele):
@@ -25,13 +25,14 @@ def detecteur_billets(df, modele):
     st.dataframe(df)  # Affiche le DataFrame avec les prédictions
     st.bar_chart(df["Prédiction"].value_counts())
 
-# Chargement du modèle logistique pré-entraîné
-modele_logistique = joblib.load('modele_logistique.pkl')
+# Chargement du modèle logistique pré-entraîné avec pickle
+with open('modele_logistique.pkl', 'rb') as model_file:
+    modele_logistique = pickle.load(model_file)
 
 # Interface utilisateur Streamlit
 st.title("Détecteur de faux billets")
 st.markdown(
-    "Cette application utilise un modèle de détection pour classer les billets 'Anthentique' ou 'Contrefait' en fonction de leurs caractéristiques."
+    "Cette application utilise un modèle de détection pour classer les billets 'Authentique' ou 'Contrefait' en fonction de leurs caractéristiques."
 )
 
 # Chargement du fichier CSV
@@ -41,5 +42,5 @@ if uploaded_file is not None:
     # Charger le fichier CSV en DataFrame
     df = pd.read_csv(uploaded_file, sep=",")
 
-    # Appeler la fonction detecter_billets pour effectuer la détection
+    # Appeler la fonction detecteur_billets pour effectuer la détection
     detecteur_billets(df, modele_logistique)
