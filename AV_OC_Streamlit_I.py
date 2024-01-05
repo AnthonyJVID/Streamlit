@@ -32,7 +32,7 @@ modele_logistique = joblib.load('modele_logistique.pkl')
 st.title("Détecteur de faux billets")
 st.markdown(
     "Cette application utilise un modèle de détection pour classer les billets 'Anthentique' ou 'Contrefait' en fonction de leurs caractéristiques."
-    "par Anthony VIDRAGO"
+    "n/ par Anthony VIDRAGO"
 )
 
 # Chargement du fichier CSV
