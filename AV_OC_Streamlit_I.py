@@ -31,7 +31,8 @@ modele_logistique = joblib.load('modele_logistique.pkl')
 # Interface utilisateur Streamlit
 st.title("Détecteur de faux billets")
 st.markdown(
-    "Cette application utilise un modèle de détection pour classer les billets 'Anthentique' ou 'Contrefait' en fonction de leurs caractéristiques."
+    "Cette application utilise un modèle de détection pour classer les billets 'Anthentique' ou 'Contrefait' en fonction de leurs caractéristiques.
+    par Anthony VIDRAGO"
 )
 
 # Chargement du fichier CSV
