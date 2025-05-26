@@ -31,7 +31,7 @@ modele_logistique = joblib.load('modele_logistique.pkl')
 # Interface utilisateur Streamlit
 st.title("Détecteur de faux billets")
 st.markdown(
-    "par Anthony VIDRAGO pour OC - 08/12/2023"
+    "par AnthonyJVID pour OC - 08/12/2023"
 )
 st.markdown(
     "Cette application utilise un modèle de détection pour classer les billets 'Anthentique' ou 'Contrefait' en fonction de leurs caractéristiques.")
